@@ -39,9 +39,11 @@ class TableVC: UITableViewController {
         tableView.reloadData()
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(data[indexPath.row].name!)
-        print(data[indexPath.row].email!)
-        print(data[indexPath.row].age)
+        let stb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = stb.instantiateViewController(withIdentifier: "EditDataVC") as! EditDataVC
+        vc.recivedData = data[indexPath.row]
+        print(data[indexPath.row])
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)

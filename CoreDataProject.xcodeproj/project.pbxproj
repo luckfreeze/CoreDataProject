@@ -18,6 +18,7 @@
 		4E34E7671FEA8BED009FEA76 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E34E7651FEA8BED009FEA76 /* Contact+CoreDataProperties.swift */; };
 		4E34E76C1FEA8C61009FEA76 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E34E76B1FEA8C61009FEA76 /* PersistenceService.swift */; };
 		4E34E76E1FEA9901009FEA76 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E34E76D1FEA9901009FEA76 /* CustomButton.swift */; };
+		4E8D8EF61FEC3C8C00617530 /* EditDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D8EF51FEC3C8C00617530 /* EditDataVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		4E34E7651FEA8BED009FEA76 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4E34E76B1FEA8C61009FEA76 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		4E34E76D1FEA9901009FEA76 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		4E8D8EF51FEC3C8C00617530 /* EditDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDataVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				4E34E74E1FEA89E3009FEA76 /* TableVC.swift */,
 				4E34E7621FEA8B48009FEA76 /* AddDataVC.swift */,
+				4E8D8EF51FEC3C8C00617530 /* EditDataVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				4E34E7671FEA8BED009FEA76 /* Contact+CoreDataProperties.swift in Sources */,
 				4E34E74F1FEA89E3009FEA76 /* TableVC.swift in Sources */,
 				4E34E74D1FEA89E3009FEA76 /* AppDelegate.swift in Sources */,
+				4E8D8EF61FEC3C8C00617530 /* EditDataVC.swift in Sources */,
 				4E34E76E1FEA9901009FEA76 /* CustomButton.swift in Sources */,
 				4E34E7631FEA8B48009FEA76 /* AddDataVC.swift in Sources */,
 				4E34E7551FEA89E3009FEA76 /* CoreDataProject.xcdatamodeld in Sources */,

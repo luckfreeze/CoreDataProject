@@ -50,24 +50,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="CoreData Project" id="XNn-b9-RTT"/>
-                    <connections>
-                        <segue destination="iKc-tz-3af" kind="show" id="KJM-uR-3wD"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7SQ-EA-fO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="548" y="72"/>
         </scene>
-        <!--CoreData Project-->
+        <!--Add Contact-->
         <scene sceneID="9AK-Ze-Di9">
             <objects>
-                <viewController storyboardIdentifier="AddDataVC" title="CoreData Project" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iKc-tz-3af" customClass="AddDataVC" customModule="CoreDataProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddDataVC" title="Add Contact" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iKc-tz-3af" customClass="AddDataVC" customModule="CoreDataProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A8o-hu-fXe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O7W-GQ-SqL">
-                                <rect key="frame" x="16" y="15" width="343" height="30"/>
+                                <rect key="frame" x="16" y="35" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kTa-Gc-ziW"/>
                                 </constraints>
@@ -76,7 +73,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="27m-sc-tM5">
-                                <rect key="frame" x="16" y="53" width="343" height="30"/>
+                                <rect key="frame" x="16" y="73" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="INI-YZ-a2S"/>
                                 </constraints>
@@ -85,7 +82,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ice-Vy-iFq">
-                                <rect key="frame" x="16" y="91" width="343" height="30"/>
+                                <rect key="frame" x="16" y="111" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Goi-26-eM8"/>
                                 </constraints>
@@ -94,7 +91,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMI-h4-8hM" customClass="CustomButton" customModule="CoreDataProject" customModuleProvider="target">
-                                <rect key="frame" x="7" y="488" width="360" height="43"/>
+                                <rect key="frame" x="7" y="604" width="360" height="43"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="RQd-Sa-Qfj"/>
@@ -128,7 +125,6 @@
                         <viewLayoutGuide key="safeArea" id="eXU-pF-huw"/>
                     </view>
                     <connections>
-                        <outlet property="addContactBTN" destination="gMI-h4-8hM" id="5m2-tL-dKd"/>
                         <outlet property="ageTXF" destination="Ice-Vy-iFq" id="90F-hr-3W7"/>
                         <outlet property="emailTXF" destination="27m-sc-tM5" id="AYY-jN-qb6"/>
                         <outlet property="nameTXF" destination="O7W-GQ-SqL" id="Ya3-c5-SGm"/>
@@ -136,7 +132,86 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WdA-Xv-J3P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244" y="71.514242878560722"/>
+            <point key="canvasLocation" x="1201" y="72"/>
+        </scene>
+        <!--Edit Contact-->
+        <scene sceneID="uRQ-YN-POY">
+            <objects>
+                <viewController storyboardIdentifier="EditDataVC" title="Edit Contact" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zzb-aw-xKy" customClass="EditDataVC" customModule="CoreDataProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oB5-Aa-A8R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PwJ-Nh-QC9">
+                                <rect key="frame" x="16" y="30" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="tDI-bg-pbC"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sxY-mq-uDd">
+                                <rect key="frame" x="16" y="68" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="74x-dB-azX"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="naa-w5-8gA">
+                                <rect key="frame" x="16" y="106" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bge-e7-KoP"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9W-cI-Z7c" customClass="CustomButton" customModule="CoreDataProject" customModuleProvider="target">
+                                <rect key="frame" x="7" y="604" width="360" height="43"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Div-MQ-uzG"/>
+                                </constraints>
+                                <state key="normal" title="Save Contact">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cornerR" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="updateContact:" destination="Zzb-aw-xKy" eventType="touchUpInside" id="nU1-kJ-zpx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="n9W-cI-Z7c" firstAttribute="leading" secondItem="ZQv-L9-XMY" secondAttribute="leading" constant="7" id="AlK-fF-c7b"/>
+                            <constraint firstItem="ZQv-L9-XMY" firstAttribute="trailing" secondItem="PwJ-Nh-QC9" secondAttribute="trailing" constant="16" id="DIs-k9-aPq"/>
+                            <constraint firstItem="PwJ-Nh-QC9" firstAttribute="leading" secondItem="ZQv-L9-XMY" secondAttribute="leading" constant="16" id="aaq-8L-BsQ"/>
+                            <constraint firstItem="ZQv-L9-XMY" firstAttribute="trailing" secondItem="n9W-cI-Z7c" secondAttribute="trailing" constant="8" id="bfw-ek-aOU"/>
+                            <constraint firstItem="ZQv-L9-XMY" firstAttribute="trailing" secondItem="naa-w5-8gA" secondAttribute="trailing" constant="16" id="ckt-hv-e0L"/>
+                            <constraint firstItem="ZQv-L9-XMY" firstAttribute="bottom" secondItem="n9W-cI-Z7c" secondAttribute="bottom" constant="20" id="cnc-kv-oQV"/>
+                            <constraint firstItem="sxY-mq-uDd" firstAttribute="leading" secondItem="ZQv-L9-XMY" secondAttribute="leading" constant="16" id="csB-cl-Osg"/>
+                            <constraint firstItem="ZQv-L9-XMY" firstAttribute="trailing" secondItem="sxY-mq-uDd" secondAttribute="trailing" constant="16" id="d58-ai-MJE"/>
+                            <constraint firstItem="naa-w5-8gA" firstAttribute="leading" secondItem="ZQv-L9-XMY" secondAttribute="leading" constant="16" id="fRr-Hu-ujf"/>
+                            <constraint firstItem="sxY-mq-uDd" firstAttribute="top" secondItem="PwJ-Nh-QC9" secondAttribute="bottom" constant="8" id="h17-Oc-ULl"/>
+                            <constraint firstItem="naa-w5-8gA" firstAttribute="top" secondItem="sxY-mq-uDd" secondAttribute="bottom" constant="8" id="hTO-K1-ecg"/>
+                            <constraint firstItem="PwJ-Nh-QC9" firstAttribute="top" secondItem="ZQv-L9-XMY" secondAttribute="top" constant="10" id="lB2-k3-KNu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZQv-L9-XMY"/>
+                    </view>
+                    <connections>
+                        <outlet property="ageTXF" destination="naa-w5-8gA" id="KLq-BD-jDo"/>
+                        <outlet property="emailTXF" destination="sxY-mq-uDd" id="0HO-U8-cvb"/>
+                        <outlet property="nameTXF" destination="PwJ-Nh-QC9" id="l1b-Qm-Q2K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kcu-dC-k70" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1927" y="72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wby-Hi-whT">
