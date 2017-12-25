@@ -14,17 +14,15 @@ class AddDataVC: UIViewController {
     @IBOutlet weak var nameTXF: UITextField!
     @IBOutlet weak var emailTXF: UITextField!
     @IBOutlet weak var ageTXF: UITextField!
+    @IBOutlet weak var addBTN: CustomButton!
     
     let contact = Contact(context: PersistenceService.context)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         updateNavBar()
     }
+    override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated) }
   
     @IBAction func addContact(_ sender: UIButton) {
         
@@ -56,17 +54,3 @@ class AddDataVC: UIViewController {
         self.view.endEditing(true)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

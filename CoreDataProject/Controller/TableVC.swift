@@ -15,13 +15,14 @@ class TableVC: UITableViewController {
     
     var data = [Contact]()
     
-    override func viewDidLoad() { super.viewDidLoad() }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         updateNavBar()
         fetchResult()
         tableView.reloadData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated) }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -74,9 +75,8 @@ class TableVC: UITableViewController {
     private func updateNavBar() {
         if let navBar = self.navigationController?.navigationBar {
             navBar.topItem?.title = "CoreData Project"
-            navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-            navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
             navBar.tintColor = UIColor.white
+            navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
             navBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.plain, target: self, action: #selector(addContact))
         }
     }
@@ -95,31 +95,3 @@ class TableVC: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

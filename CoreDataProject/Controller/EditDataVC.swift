@@ -22,20 +22,14 @@ class EditDataVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getDataRecived()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         updateNavBar()
     }
-    
+    override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated) }
     
     private func updateNavBar() {
         if let navBar = self.navigationController?.navigationBar {
             navBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
-            navBar.prefersLargeTitles = true
             navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-            navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         }
     }
     
@@ -71,11 +65,3 @@ class EditDataVC: UIViewController {
         self.view.endEditing(true)
     }
 }
-
-
-
-
-
-
-
-
