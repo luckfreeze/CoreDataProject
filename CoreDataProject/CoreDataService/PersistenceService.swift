@@ -21,7 +21,7 @@ class PersistenceService {
         let container = NSPersistentContainer(name: "CoreDataProject")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                fatalError("Unresolved error (PersistentContainer) \(error), \(error.userInfo)")
             }
         })
         return container

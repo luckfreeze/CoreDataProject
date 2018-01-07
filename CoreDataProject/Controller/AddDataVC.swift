@@ -16,7 +16,7 @@ class AddDataVC: UIViewController {
     @IBOutlet weak var ageTXF: UITextField!
     @IBOutlet weak var addBTN: CustomButton!
     
-    let contact = Contact(context: PersistenceService.context)
+    private let contact = Contact(context: PersistenceService.context)
     
     override func viewDidLoad() {
         super.viewDidLoad()

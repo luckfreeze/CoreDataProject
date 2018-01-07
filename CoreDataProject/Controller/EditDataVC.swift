@@ -15,7 +15,7 @@ class EditDataVC: UIViewController {
     @IBOutlet weak var emailTXF: UITextField!
     @IBOutlet weak var ageTXF: UITextField!
     
-    let contact = Contact(context: PersistenceService.context)
+    private let contact = Contact(context: PersistenceService.context)
     
     var recivedData: Contact? // this variable hands with the data
 
