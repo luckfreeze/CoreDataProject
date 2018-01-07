@@ -78,6 +78,9 @@ class TableVC: UITableViewController {
         if let navBar = self.navigationController?.navigationBar {
             navBar.topItem?.title = "CoreData Project"
             navBar.tintColor = UIColor.white
+            if #available(iOS 11, *) {
+                navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+            } else  {}
             navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
             navBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.plain, target: self, action: #selector(addContact))
         }
