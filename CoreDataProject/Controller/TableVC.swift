@@ -32,6 +32,8 @@ class TableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
+    
+    // Delet Data by Row
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             let dataToDelete = data[indexPath.row]
@@ -55,6 +57,7 @@ class TableVC: UITableViewController {
         return cell
     }
     
+    // Pushing data from Core
     private func fetchResult() {
         do {
             let contact = try PersistenceService.context.fetch(fetchRequest)

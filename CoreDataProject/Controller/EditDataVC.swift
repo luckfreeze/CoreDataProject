@@ -17,7 +17,7 @@ class EditDataVC: UIViewController {
     
     private let contact = Contact(context: PersistenceService.context)
     
-    var recivedData: Contact? // this variable hands with the data
+    var recivedData: Contact? // this variable hands with the data  AMAZING
 
     override func viewDidLoad() {
         super.viewDidLoad()
