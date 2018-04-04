@@ -47,7 +47,6 @@ class TableVC: UITableViewController {
         let stb = UIStoryboard(name: "Main", bundle: nil)
         let vc = stb.instantiateViewController(withIdentifier: "EditDataVC") as! EditDataVC
         vc.recivedData = data[indexPath.row]
-        print(data[indexPath.row])
         self.navigationController?.pushViewController(vc, animated: true)
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,24 +56,20 @@ class TableVC: UITableViewController {
         return cell
     }
     
-    // Pushing data from Core
+    // Pushing data from CoreData
     private func fetchResult() {
         do {
-            let contact = try PersistenceService.context.fetch(fetchRequest)
-            handleRetrivedData(with: contact)
+            let contact = try PersistenceService.context.fetch(fetchRequest) // <- this return [Contact]
+            data = handleRetrivedData(with: contact)
         } catch  {
             showMessage(with: "Some went wrong retriving your data \(error.localizedDescription)")
         }
     }
 
-    private func handleRetrivedData(with retrivedData:[Contact]) {
-        var realData = [Contact]()
-        for x in 0..<retrivedData.count {
-            if retrivedData[x].name != nil {
-                realData.append(retrivedData[x])
-            }
+    private func handleRetrivedData(with retrivedData:[Contact]) -> [Contact] {
+        return retrivedData.filter { (value) -> Bool in
+            value.name != nil
         }
-        data = realData
     }
     
     private func updateNavBar() {

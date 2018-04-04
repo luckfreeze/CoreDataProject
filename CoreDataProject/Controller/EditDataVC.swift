@@ -35,7 +35,6 @@ class EditDataVC: UIViewController {
     
     private func getDataRecived() {
         if let data = recivedData {
-            print(data)
             self.nameTXF.text = recivedData?.name
             self.emailTXF.text = recivedData?.email
             self.ageTXF.text = String(describing: recivedData!.age)
