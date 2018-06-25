@@ -26,28 +26,26 @@ class AddDataVC: UIViewController {
   
     @IBAction func addContact(_ sender: UIButton) {
         
-        self.contact.name = nameTXF.text
-        self.contact.email = emailTXF.text
-        self.contact.age = Int32(ageTXF.text!)!
-        
-        PersistenceService.saveContext()
-        showMessage(withMessage: "Contact Saved")
+        if nameTXF.text == "" || emailTXF.text == "" || ageTXF.text == "" {
+            AlertService.AlertWithAction(in: self, withMessage: "Don't leave any fields empty") {
+                return
+            }
+        } else {
+            self.contact.name = nameTXF.text
+            self.contact.email = emailTXF.text
+            self.contact.age = Int32(ageTXF.text!)!
+            
+            PersistenceService.saveContext()
+            AlertService.AlertWithAction(in: self, withMessage: "Contact Saved") {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
     
     private func updateNavBar() {
         if let navBar = self.navigationController?.navigationBar {
             navBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
         }
-    }
-    
-    private func showMessage(withMessage message: String) {
-        
-        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.default) { (_) in
-            self.navigationController?.popViewController(animated: true)
-        }
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

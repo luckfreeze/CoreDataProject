@@ -34,7 +34,7 @@ class EditDataVC: UIViewController {
     }
     
     private func getDataRecived() {
-        if let data = recivedData {
+        if recivedData != nil {
             self.nameTXF.text = recivedData?.name
             self.emailTXF.text = recivedData?.email
             self.ageTXF.text = String(describing: recivedData!.age)
@@ -43,22 +43,24 @@ class EditDataVC: UIViewController {
     
     @IBAction func updateContact(_ sender: UIButton) {
         
-        self.recivedData?.name = nameTXF.text
-        self.recivedData?.email = emailTXF.text
-        self.recivedData?.age = Int32(ageTXF.text!)!
+        if nameTXF.text == "" || emailTXF.text == "" || ageTXF.text == "" {
+            AlertService.AlertWithAction(in: self, withMessage: "Don't leave any fields empty") {
+                return
+            }
+        } else {
+            self.recivedData?.name = nameTXF.text
+            self.recivedData?.email = emailTXF.text
+            self.recivedData?.age = Int32(ageTXF.text!)!
+            
+            PersistenceService.saveContext()
+            AlertService.AlertWithAction(in: self, withMessage: "Contact Edited") {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
         
-        PersistenceService.saveContext()
-        showMessage(withMessage: "Contact Edited")
     }
     
-    private func showMessage(withMessage message: String) {
-        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.default) { (_) in
-            self.navigationController?.popViewController(animated: true)
-        }
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
-    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

@@ -19,6 +19,7 @@
 		4E34E76C1FEA8C61009FEA76 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E34E76B1FEA8C61009FEA76 /* PersistenceService.swift */; };
 		4E34E76E1FEA9901009FEA76 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E34E76D1FEA9901009FEA76 /* CustomButton.swift */; };
 		4E8D8EF61FEC3C8C00617530 /* EditDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D8EF51FEC3C8C00617530 /* EditDataVC.swift */; };
+		CE053D6E20E112D100E960A2 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE053D6D20E112D100E960A2 /* AlertService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4E34E76B1FEA8C61009FEA76 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		4E34E76D1FEA9901009FEA76 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		4E8D8EF51FEC3C8C00617530 /* EditDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDataVC.swift; sourceTree = "<group>"; };
+		CE053D6D20E112D100E960A2 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertService.swift; path = CoreDataProject/Services/AlertService.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		4E34E74B1FEA89E3009FEA76 /* CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
+				CE053D6F20E112D900E960A2 /* Services */,
 				4E34E7681FEA8BF5009FEA76 /* CoreDataService */,
 				4E34E76F1FEA9907009FEA76 /* View */,
 				4E34E7691FEA8C00009FEA76 /* Controller */,
@@ -115,6 +118,14 @@
 				4E34E76D1FEA9901009FEA76 /* CustomButton.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CE053D6F20E112D900E960A2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE053D6D20E112D100E960A2 /* AlertService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 				4E34E7671FEA8BED009FEA76 /* Contact+CoreDataProperties.swift in Sources */,
 				4E34E74F1FEA89E3009FEA76 /* TableVC.swift in Sources */,
 				4E34E74D1FEA89E3009FEA76 /* AppDelegate.swift in Sources */,
+				CE053D6E20E112D100E960A2 /* AlertService.swift in Sources */,
 				4E8D8EF61FEC3C8C00617530 /* EditDataVC.swift in Sources */,
 				4E34E76E1FEA9901009FEA76 /* CustomButton.swift in Sources */,
 				4E34E7631FEA8B48009FEA76 /* AddDataVC.swift in Sources */,

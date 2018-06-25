@@ -62,10 +62,11 @@ class TableVC: UITableViewController {
             let contact = try PersistenceService.context.fetch(fetchRequest) // <- this return [Contact]
             data = handleRetrivedData(with: contact)
         } catch  {
-            showMessage(with: "Some went wrong retriving your data \(error.localizedDescription)")
+            AlertService.DefaultAlert(in: self, withMessage: "Some went wrong retriving your data \(error.localizedDescription)")
         }
     }
 
+    // try to fix a bug, hi brings me and empty Contact's values
     private func handleRetrivedData(with retrivedData:[Contact]) -> [Contact] {
         return retrivedData.filter { (value) -> Bool in
             value.name != nil
@@ -91,10 +92,4 @@ class TableVC: UITableViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func showMessage(with message: String) {
-        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil)
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
-    }
 }
