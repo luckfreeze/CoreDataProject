@@ -44,7 +44,7 @@ class AddDataVC: UIViewController {
     
     private func updateNavBar() {
         if let navBar = self.navigationController?.navigationBar {
-            navBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
+            navBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: self, action: nil)
         }
     }
     

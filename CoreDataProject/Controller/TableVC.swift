@@ -34,14 +34,14 @@ class TableVC: UITableViewController {
     }
     
     // Delet Data by Row
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             let dataToDelete = data[indexPath.row]
             PersistenceService.context.delete(dataToDelete)
             PersistenceService.saveContext()
+            fetchResult()
+            tableView.reloadData()
         }
-        fetchResult()
-        tableView.reloadData()
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let stb = UIStoryboard(name: "Main", bundle: nil)
@@ -66,7 +66,7 @@ class TableVC: UITableViewController {
         }
     }
 
-    // try to fix a bug, hi brings me and empty Contact's values
+    // try to fix a bug, he brings me and empty Contact's values
     private func handleRetrivedData(with retrivedData:[Contact]) -> [Contact] {
         return retrivedData.filter { (value) -> Bool in
             value.name != nil
@@ -78,10 +78,10 @@ class TableVC: UITableViewController {
             navBar.topItem?.title = "CoreData Project"
             navBar.tintColor = UIColor.white
             if #available(iOS 11, *) {
-                navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+                navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             } else  {}
-            navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-            navBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.plain, target: self, action: #selector(addContact))
+            navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            navBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItem.Style.plain, target: self, action: #selector(addContact))
         }
     }
 

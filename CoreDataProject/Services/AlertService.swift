@@ -10,10 +10,10 @@ import UIKit
 
 class AlertService {
     
-    static func AlertWithAction(in viewController: UIViewController, withMessage message: String, action: @escaping ()->()) {
+    static func AlertWithAction(in viewController: UIViewController, withMessage message: String, action: @escaping () -> () ) {
         
-        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.default) { (_) in
+        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default) { (_) in
             action()
         }
         alert.addAction(okAction)
@@ -21,8 +21,8 @@ class AlertService {
     }
     
     static func DefaultAlert(in viewController: UIViewController, withMessage message: String) {
-        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
         alert.addAction(okAction)
         viewController.present(alert, animated: true, completion: nil)
     }

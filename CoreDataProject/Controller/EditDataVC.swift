@@ -28,8 +28,8 @@ class EditDataVC: UIViewController {
     
     private func updateNavBar() {
         if let navBar = self.navigationController?.navigationBar {
-            navBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
-            navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+            navBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: self, action: nil)
+            navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         }
     }
     
